@@ -1,4 +1,3 @@
-<!-- qa -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +9,21 @@
 <body>
     <div class="container">
         <h1>To-Do List</h1>
-        <p>Bienvenido a tu aplicación de lista de tareas.</p>
-        <p>Aquí se mostrarán tus tareas.</p>
+
+        <form action="/add" method="post" class="task-form">
+            <input type="text" name="description" placeholder="Añadir nueva tarea" required>
+            <button type="submit">Añadir</button>
+        </form>
+
+        <ul class="task-list">
+            {% for task in tasks %}
+            <li class="{{ 'done' if task.done else '' }}">
+                <span>{{ task.description }}</span>
+            </li>
+            {% else %}
+            <li>No hay tareas aún.</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
