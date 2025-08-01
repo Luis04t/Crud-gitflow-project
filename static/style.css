@@ -59,3 +59,19 @@ h1 {
     text-decoration: line-through;
     color: #888;
 }
+
+.button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+}
+.update-button {
+    background-color: #007bff;
+}
+.update-button:hover {
+    background-color: #0056b3;
+}
