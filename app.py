@@ -27,5 +27,11 @@ def update_task(task_id):
             break
     return redirect(url_for('index'))
 
+@app.route('/delete/<int:task_id>')
+def delete_task(task_id):
+    global tasks
+    tasks = [task for task in tasks if task['id'] != task_id]
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)
