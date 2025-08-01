@@ -19,5 +19,13 @@ def add_task():
         task_id_counter += 1
     return redirect(url_for('index'))
 
+@app.route('/update/<int:task_id>')
+def update_task(task_id):
+    for task in tasks:
+        if task['id'] == task_id:
+            task['done'] = not task['done']
+            break
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)
